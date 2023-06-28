@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import {Container } from 'react-bootstrap';
 import './App.css';
+import Product from './Component/Store/Product';
+import CartButton from './Component/Store/CartButton';
+import Footer from './Component/Store/Footer';
+import Title from './Component/Store/Title';
+import NavbarCart from './Component/Store/NavbarCart';
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavbarCart/>
+      <Title/>
+      
+      <Container>
+      <h2 style={{fontFamily: "Lucida Handwriting",
+                  textAlign:"center",  
+                  fontSize:"30px", 
+                  textWeight:"Bold", 
+                  marginTop:"50px", 
+                  marginBottom:"50px"
+                  }}>Music</h2>
+      </Container>
+
+      <Product/>
+      <CartButton/>
+      <Footer/>
+
+    </>
   );
 }
 
