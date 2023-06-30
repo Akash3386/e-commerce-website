@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {Container, Button, Navbar } from 'react-bootstrap';
+import CartElement from "../CartElement";
 
 const NavbarCart = () => {
+
+    const [isShown, setIsShown] = useState(false)
+
+    const openCart = () => {
+      setIsShown(current => !current)
+    }
     return (
         <>
         <Navbar bg="dark" expand="sm" variant="dark" sticky="top" className="bg">
@@ -14,7 +21,10 @@ const NavbarCart = () => {
                             borderColor:"#56CCF2",
                             fontSize:"20px",
                             fontWeight:"bold",
-                            border:"solid #56CCF2"}}>Cart</Button>
+                            border:"solid #56CCF2"}}
+                            onClick={openCart}>Cart</Button>
+                            {isShown && <CartElement/>}
+                                                   
          </Container>
       </Navbar>
   

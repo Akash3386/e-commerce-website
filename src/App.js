@@ -5,6 +5,7 @@ import CartButton from './Component/Store/CartButton';
 import Footer from './Component/Store/Footer';
 import Title from './Component/Store/Title';
 import NavbarCart from './Component/Store/NavbarCart';
+import CartElement from './Component/CartElement';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Product/>
       <CartButton/>
       <Footer/>
+      {/* <CartElement/> */}
 
     </>
   );

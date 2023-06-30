@@ -72,7 +72,10 @@ const Product = () => {
                         <Button className="m-1" style={{float:"right", 
                                                         backgroundColor:"#56CCF2",
                                                         fontWeight:"bold",
-                                                        borderRadius:"2px"}}>Add to Cart</Button>
+                                                        borderRadius:"2px"
+                                                        }}>Add to Cart</Button>
+                                                     
+
                     </Card.Body>
                    </Card>
                 </Col>
