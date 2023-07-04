@@ -1,6 +1,7 @@
 // import { Button } from "bootstrap";
-import React from "react";
+import React, { useContext } from "react";
 import { Table, Container,Button, CloseButton } from "react-bootstrap";
+import CartContext from "./CartContext";
 
 const CartElement = () => {
 
@@ -50,8 +51,12 @@ const CartElement = () => {
         
         ]
 
+        
+        const cartCtx = useContext(CartContext)
 
     return (
+
+        // const cartCtx = useContext(CartContext)
         <>
         <Container style={{position: "fixed",
                            top: "50px",
@@ -71,19 +76,7 @@ const CartElement = () => {
                         float:"right"
                         }}/>
         <Container>
-        {/* <Button style={{position: "absolute",
-                        cursor: "pointer",
-                        color: "rgb(121, 117, 117)",
-                        top: "0",
-                        right: "0",
-                        margin: "20px",
-                        background: "none",
-                        fontSize: "16px",
-                        fontWeight: "700",
-                        border: "1px solid rgb(121, 117, 117)",
-                        borderRadius: "7px",
-                        padding: "5px"
-                        }}>X</Button>  */}
+        
            
         <h2 style={{fontFamily: "Lucida Handwriting",
                   textAlign:"center",  
@@ -123,14 +116,17 @@ const CartElement = () => {
                                                marginRight: '20px'
                                                }} 
                                         value={element.quantity}/>
-                                        <Button className="mf-2" variant="danger">Remove</Button>
+                                        <Button className="mf-2" variant="danger" onClick={() => {}}>Remove</Button>
+                                        
                             </td>
                         </tr>
                     )
                 })}
             </tbody>
         </Table>
+        <Button onClick={(cartCtx) => {console.log(cartCtx.items)}}>Get Item</Button>
         </Container>
+    
         </>
 
     )

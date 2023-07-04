@@ -5,13 +5,14 @@ import CartButton from './Component/Store/CartButton';
 import Footer from './Component/Store/Footer';
 import Title from './Component/Store/Title';
 import NavbarCart from './Component/Store/NavbarCart';
-import CartElement from './Component/CartElement';
+// import CartProvider from './Component/CartContextProvider';
 
 
 function App() {
   
   return (
     <>
+    
       <NavbarCart/>
       <Title/>
       
@@ -28,7 +29,9 @@ function App() {
       <Product/>
       <CartButton/>
       <Footer/>
-      {/* <CartElement/> */}
+
+
+    
 
     </>
   );

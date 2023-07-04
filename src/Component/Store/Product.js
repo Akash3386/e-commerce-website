@@ -1,5 +1,7 @@
 import React from "react";
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+// import CartContext from "../CartContext";
+import ProductItem from "./ProductItem";
 
 const Product = () => {
 
@@ -56,32 +58,21 @@ const Product = () => {
         
         ]
 
+    
+
     return (
         <>
         
-         <Row className="mt-1">
+         
             
             {productsArr.map(product => {
                 return (
-                <Col key={product.title}  md={{ span: 5, offset: 8 }} className="m-4" style={{textAlign:'center', margin:"auto"}}>
-                   <Card className="shadow" style={{width:'18rem', float:"right"}}>
-                    <Card.Header style={{textAlign:'center'}}>{product.name}</Card.Header>
-                    <Card.Img className="hover-zoom" src={product.imageUrl} responsive style={{width:"auto",height:"200"}}></Card.Img>
-                    <Card.Body>
-                        <span className="m-8" style={{float:"left", top:'70%'}}>Rs{product.price}</span>
-                        <Button className="m-1" style={{float:"right", 
-                                                        backgroundColor:"#56CCF2",
-                                                        fontWeight:"bold",
-                                                        borderRadius:"2px"
-                                                        }}>Add to Cart</Button>
-                                                     
-
-                    </Card.Body>
-                   </Card>
-                </Col>
+                    <Row key={product.title} className="mt-1">  
+                  <ProductItem  {...product}/>
+                  </Row>
                 )
             })}
-         </Row>
+         
         </>
     )
 }
