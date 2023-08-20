@@ -1,9 +1,11 @@
 // import { Button } from "bootstrap";
 import React, { useContext } from "react";
-import { Table, Container,Button, CloseButton } from "react-bootstrap";
+import { Table, Container,Button } from "react-bootstrap";
 import CartContext from "./CartContext";
 
 const CartElement = () => {
+
+    
 
     const cartElements = [
 
@@ -53,7 +55,7 @@ const CartElement = () => {
 
         
         const cartCtx = useContext(CartContext)
-
+        console.log(cartCtx)
     return (
 
         // const cartCtx = useContext(CartContext)
@@ -65,25 +67,39 @@ const CartElement = () => {
                            backgroundColor: "rgb(255, 255, 255)",
                            border: "1px solid rgb(177, 103, 103)",
                            minHeight: "50vh",
-                           maxWidth: "900px",
+                           maxWidth: "500px",
                            padding: "20px 30px"
                           }}>
                         
 
-        <CloseButton style={{border: "1px solid rgb(121, 117, 117)",
+        {/* <CloseButton style={{border: "1px solid rgb(121, 117, 117)",
                         // borderRadius: "7px",
                        
                         float:"right"
-                        }}/>
+                        }}/> */}
         <Container>
-        
+        <Button style={{position: "absolute",
+                        cursor: "pointer",
+                        color: "rgb(121, 117, 117)",
+                        top: "0",
+                        right: "0",
+                        margin: "20px",
+                        background: "none",
+                        fontSize: "16px",
+                        fontWeight: "700",
+                        border: "1px solid rgb(121, 117, 117)",
+                        borderRadius: "7px",
+                        padding: "5px"
+                        }}>X</Button> 
+                        
            
         <h2 style={{fontFamily: "Lucida Handwriting",
                   textAlign:"center",  
                   fontSize:"30px", 
                   textWeight:"Bold", 
-                  marginTop:"50px", 
-                  marginBottom:"50px"
+                  margin: "20px 0px"
+                //   marginTop:"50px", 
+                //   marginBottom:"50px"
                   }}>Cart</h2>
       </Container>
         <Table>
@@ -98,15 +114,15 @@ const CartElement = () => {
                 {cartElements.map(element => {
                     return(
                         <tr key={element.title}>
-                            <td className="m-2"><img className="m-3" 
+                            <td className="m-2"><img className="m-1" 
                                                      src={element.imageUrl} 
-                                                     style={{width:"10%",
-                                                             height:"10%"
+                                                     style={{width:"35%",
+                                                             height:"35%"
                                                              }}>
                                                 </img>
                                                {element.name}
                             </td>
-                            <td>{element.price}</td>
+                            <td className="m-10">{element.price}</td>
                             <td><input style={{width: '40px',
                                                height: '30px',
                                                border: '1px solid rgb(0, 204, 255)',
@@ -116,7 +132,7 @@ const CartElement = () => {
                                                marginRight: '20px'
                                                }} 
                                         value={element.quantity}/>
-                                        <Button className="mf-2" variant="danger" onClick={() => {}}>Remove</Button>
+                                        <Button className="mf-2" variant="danger">Remove</Button>
                                         
                             </td>
                         </tr>
