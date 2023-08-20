@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-// import CartContext from "../CartContext";
+import CartContext from "../CartContext";
 import ProductItem from "./ProductItem";
 
 const Product = () => {
@@ -63,16 +63,16 @@ const Product = () => {
     return (
         <>
         
-         
+         <Row style={{justifyContent:"space-around"}}>
             
             {productsArr.map(product => {
                 return (
-                    <Row key={product.title} className="mt-1">  
-                  <ProductItem  {...product}/>
-                  </Row>
+                
+                     <ProductItem key={product.title} {...product}/>
+                   
                 )
             })}
-         
+         </Row>
         </>
     )
 }
